@@ -49,5 +49,5 @@ function extract() {
 function gm(){
 	read myvar
 	git add *
-	git commit -m myvar
+	git commit -m "$myvar"
 }
