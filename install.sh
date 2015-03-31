@@ -29,6 +29,8 @@ wget http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb
 sudo dpkg -i *.deb
 rm *.deb
 sudo apt-get -f install
+sudo apt-get install mysql-server
+
 
 echo "configuring git"
 git config --global user.name "Hamid R. Darabi, Ph.D."
@@ -42,3 +44,10 @@ echo "configuring R"
 source install_r.sh 
 
 echo "linking dotfiles"
+ln -s ~/dev_dotfiles/dot_vim ~/.vim
+ln -s ~/dev_dotfiles/dot_vimrc ~/.vimrc
+ln -s ~/dev_dotfiles/dot_gitconfig ~/.gitconfig
+ln -s ~/dev_dotfiles/dot_bashrc ~/.bashrc
+ln -s ~/dev_dotfiles/dot_bash_aliases ~/.bash_aliases
+ln -s ~/dev_dotfiles/dot_Rprofile ~/.Rprofile
+ln -s ~/dev_dotfiles/dot_ssh ~/.ssh
