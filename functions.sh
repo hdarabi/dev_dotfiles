@@ -50,3 +50,7 @@ function gc(){
 	git add *
 	git commit -m "$1" 
 }
+
+function ged(){
+	git commit --amend -m "$1"
+}
