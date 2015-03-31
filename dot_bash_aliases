@@ -1,3 +1,6 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias gph='git push origin master'
 alias gpl='git pull origin master'
 alias rm='rm -iv'
