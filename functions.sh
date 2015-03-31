@@ -50,3 +50,7 @@ function gc(){
 	git add *
 	git commit -m "$1" 
 }
+
+function gp(){
+	git push origin master
+}
