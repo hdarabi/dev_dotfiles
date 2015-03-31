@@ -10,13 +10,21 @@ clear
 echo "Ubuntu development computer installation shell scrip scriptt"
 
 echo "installing packages"
+sudo dpkg --add-architecture i386
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
 sudo apt-get install vim
 sudo apt-get install git
 sudo apt-get install curl
 sudo apt-get install r-base
-sudo apt-get instal r-base-dev
+sudo apt-get install r-base-dev
+sudo apt-get install skype
+sudo apt-get install gimp
+sudo apt-get install inkscape
 wget http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb
 sudo dpkg -i *.deb
 rm *.deb
@@ -31,6 +39,6 @@ echo "configuring vim"
 
 
 echo "configuring R"
-source r_config.sh 
+source install_r.sh 
 
 echo "linking dotfiles"
