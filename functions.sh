@@ -48,7 +48,7 @@ function extract() {
 
 function gc(){
 	git add *
-	echo "$1"
+	echo "All files added!"
 	git commit -m "$1" 
 }
 
