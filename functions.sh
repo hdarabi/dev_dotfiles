@@ -48,6 +48,7 @@ function extract() {
 
 function gc(){
 	git add *
+	echo "$1"
 	git commit -m "$1" 
 }
 
