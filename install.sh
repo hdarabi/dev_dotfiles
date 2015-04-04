@@ -25,6 +25,7 @@ sudo apt-get install r-base-dev
 sudo apt-get install skype
 sudo apt-get install gimp
 sudo apt-get install inkscape
+sudo apt-get install texlive
 wget http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb
 sudo dpkg -i *.deb
 rm *.deb
