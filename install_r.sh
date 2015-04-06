@@ -3,4 +3,4 @@ install.packages("ggplot2", "rgl", "googleVis", "car", "lme4", "caret", "randomF
 isntall.packages("shiny", "rmarkdown", "xtable", "data.table")
 isntall.packages("zoo", "xts", "quantmod")
 isntall.packages("Rcpp", "parallel", "XML", "jsonlite", "httr")
-install.packages("devtools", "testthat", "roxygen2","PolynomF")
+install.packages("devtools", "testthat", "roxygen2","PolynomF","vimcom")
