@@ -5,8 +5,6 @@ if(interactive()){
        library(vimcom)
 }
 
-rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
-
 options(vimcom.verbose = 1)
 library(vimcom)
 unlink(".RData")
@@ -27,3 +25,4 @@ print( paste("Hi Hamid!", timeStr, "By the way,", df[rnd,"author"], "says:") )
 print( paste( df[rnd,"quote"]) )
 print("Now, I am ready:" )
 rm(list = ls())
+rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
