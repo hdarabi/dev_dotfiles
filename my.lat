@@ -1,0 +1,41 @@
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{algorithm} %ctan.org\pkg\algorithms
+\usepackage{algpseudocode}
+\usepackage{cleveref}
+\usepackage{hyperref}
+
+\DeclareMathOperator*{\argmax}{argmax}
+
+\newcommand{\HD}[1]{{\bf \small [#1 --Hamid]}}
+\newcommand{\CEIL}[1]{\lceil #1 \rceil}
+\newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
+\newcommand{\Mod}[3]{\ #1 &\equiv #2 \text{ \;\;\; mod} \left(#3\right)}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+language=Java,
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+basicstyle={\small\ttfamily},
+numbers=none,
+numberstyle=\tiny\color{gray},
+keywordstyle=\color{blue},
+commentstyle=\color{dkgreen},
+stringstyle=\color{mauve},
+breaklines=true,
+breakatwhitespace=true,
+tabsize=3
+}
