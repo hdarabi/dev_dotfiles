@@ -8,8 +8,8 @@
 \usepackage{enumitem}
 \usepackage{algorithm} %ctan.org\pkg\algorithms
 \usepackage{algpseudocode}
-\usepackage{cleveref}
 \usepackage{hyperref}
+\usepackage{cleveref}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
