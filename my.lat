@@ -10,18 +10,30 @@
 \usepackage{algpseudocode}
 \usepackage{hyperref}
 \usepackage{cleveref}
+\usepackage{table}{xcolor}
+\usepackage{caption}
 
-\DeclareMathOperator*{\argmax}{argmax}
-
-% format commands
+%%% format commands %%%
 \newcommand{\HD}[1]{{\bf \small [#1 --Hamid]}}
 
-% math commands
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\DeclareCaptionFormat{algor}{%
+\hrulefill\par\offinterlineskip\vskip1pt%
+\textbf{#1#2}#3\offinterlineskip\hrulefill}
+\DeclareCaptionStyle{algori}{singlelinecheck=off,format=algor,labelsep=space}
+\captionsetup[algorithm]{style=algori}
+
+%%% math commands %%%
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
 \newcommand{\Mod}[3]{\ #1 &\equiv #2 \text{ \;\;\; mod} \left(#3\right)}
 
-% code commands
+\DeclareMathOperator*{\argmax}{argmax}
+
+%%% code commands %%%
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\bash}[1]{ \lstinputlisting[language=bash]{#1} }
 \newcommand{\R}[1]{ \lstinputlisting[language=R]{#1} }
@@ -29,11 +41,8 @@
 \newcommand{\cpp}[1]{ \lstinputlisting[language=c++]{#1} }
 \newcommand{\php}[1]{ \lstinputlisting[language=php]{#1} }
 
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-\lstset{frame=tb,
+\lstset{
+	frame=tb,
 	language=Java,
 	aboveskip=3mm,
 	belowskip=3mm,
