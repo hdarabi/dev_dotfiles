@@ -19,6 +19,14 @@
 
 %%% format commands
 \newcommand{\HD}[1]{{\bf \small [#1 --Hamid]}}
+\renewenvironment{proposition}[1][]{{\bfseries Proposition #1:}}{\hfill\square}
+\renewenvironment{theory}[1][]{{\bfseries Theory #1:}}{\hfill\square}
+\renewenvironment{lemma}[1][]{{\bfseries Lemma #1:}}{\hfill\square}
+\renewenvironment{definition}[1][]{{\bfseries Definition #1:}}{\hfill\square}
+\renewenvironment{coro}[1][]{{\bfseries Corollary #1:}}{\hfill\square}
+\renewenvironment{proof}{{\bfseries Proof:}}{\hfill\blacksquare}
+\renewenvironment{conj}{{\bfseries Conjecture:}}{\hfill\blacksquare}
+\renewenvironment{axiom}{{\bfseries Axiom:}}{\hfill\blacksquare}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
