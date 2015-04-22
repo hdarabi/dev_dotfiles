@@ -11,6 +11,9 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{caption}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsthm}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -30,7 +33,7 @@
 %%% math commands 
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
-\newcommand{\Mod}[3]{\ #1 &\equiv #2 \text{ \;\;\; mod} \left(#3\right)}
+\newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
 
 %%% code commands
 \newcommand{\code}[1]{\texttt{#1}}
