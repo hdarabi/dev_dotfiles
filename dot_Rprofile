@@ -25,4 +25,3 @@ print( paste("Hi Hamid!", timeStr, "By the way,", df[rnd,"author"], "says:") )
 print( paste( df[rnd,"quote"]) )
 print("Now, I am ready:" )
 rm(list = ls())
-rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
