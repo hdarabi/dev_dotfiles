@@ -13,6 +13,7 @@
 \usepackage{caption}
 \usepackage{latexsym}
 \usepackage{amssymb}
+\usepackage[font=small,labelfont=bf]{caption}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
