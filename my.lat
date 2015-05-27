@@ -13,7 +13,6 @@
 \usepackage{caption}
 \usepackage{latexsym}
 \usepackage{amssymb}
-\usepackage[font=small,labelfont=bf]{caption}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -27,6 +26,7 @@
 \newenvironment{proof}{{\bfseries Proof:}}{\hfill\blacksquare}
 \newenvironment{conj}{{\bfseries Conjecture:}}{\hfill\blacksquare}
 \newenvironment{axiom}{{\bfseries Axiom:}}{\hfill\blacksquare}
+\newenvironment{goals}{\begin{itemize}\setlength\itemsep{-0.5em}}{\end{itemize}}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -42,7 +42,6 @@
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
 \newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
-\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 
 %%% code commands
 \newcommand{\code}[1]{\texttt{#1}}
