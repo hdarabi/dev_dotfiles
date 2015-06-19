@@ -35,11 +35,10 @@ sudo apt-get install mysql-server
 
 echo "configuring git"
 git config --global user.name "Hamid R. Darabi, Ph.D."
-git config --global user.email "hdarabi@gmail.com"
+git config --global user.email "hamid@darabi.com"
 git config --core.editor vim
 
 echo "configuring vim"
-
 
 echo "configuring R"
 source install_r.sh 
