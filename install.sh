@@ -7,7 +7,7 @@
 #	      running a development environment for myself from scratch.
 
 clear
-echo "Ubuntu development computer installation shell scrip scriptt"
+echo "Ubuntu development computer installation shell scrip script"
 
 echo "installing packages"
 sudo dpkg --add-architecture i386
