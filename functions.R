@@ -3,9 +3,8 @@ sna    = function(x){ sum(is.na(x)) }
 str1   = function(x){ str(x, max.level=1)}
 str2   = function(x){ str(x, max.level=2)}
 str3   = function(x){ str(x, max.level=3)}
-
 rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
-
+fch    = function(x){ levels(x)[x] }
 gline  = function(df){
         col = rainbow(ncol(df)-1)
         library(ggplot2)
