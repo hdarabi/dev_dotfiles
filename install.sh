@@ -1,10 +1,12 @@
-#!/bin/bash
-#Author:      Hamid R. Darabi, Ph.D.
-#Title:       Ubuntu development shell
-#Version:     0.0.0
-#Date:        March 26th, 2015
-#Description: In this file I put all the required codes for installing and
-#	      running a development environment for myself from scratch.
+##################################################################
+# Name        : install
+# Description : This is the main script to install required files
+#               on ubuntu linux.
+# Version     : 0.0.0
+# Created On  : 2015-07-10
+# Modified On : 2015-07-10
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
 
 clear
 echo "Ubuntu development computer installation shell scrip script"
