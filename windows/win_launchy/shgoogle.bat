@@ -1,0 +1,1 @@
+"c:\program files (x86)\google\chrome\application\chrome.exe" --new-window "https://scholar.google.com/scholar?hl=en&q=%*"

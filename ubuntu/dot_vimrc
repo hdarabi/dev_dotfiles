@@ -1,0 +1,42 @@
+syntax enable 
+filetype plugin indent on
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set spell spelllang=en_us
+set diffexpr=MyDiff()
+colorscheme koehler
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug '~/my-prototype-plugin'
+
+call plug#end()
+
+set guifont=Lucida_Console:h16
+set hlsearch!
+nnoremap <F3> :set hlsearch!<CR>
+set tw=79
+set formatoptions+=t
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set winaltkeys=yes
+let vimrplugin_assign = 0
+autocmd VimEnter * echo "Hi Hamid, you are about to do an awesome work, YAY!"
+set autochdir
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright

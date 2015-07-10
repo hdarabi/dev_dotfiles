@@ -1,0 +1,1 @@
+"c:\program files (x86)\google\chrome\application\chrome.exe" --new-window "http://www.google.com/search?q=%*"

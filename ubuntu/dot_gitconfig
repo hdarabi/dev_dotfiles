@@ -1,0 +1,4 @@
+user.name = Hamid R. Darabi, Ph.D.
+user.email = hamid@darabi.com
+branch.autosetuprebase = always
+core.editor = vim
