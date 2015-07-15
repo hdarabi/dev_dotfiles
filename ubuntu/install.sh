@@ -4,7 +4,7 @@
 #               on ubuntu linux.
 # Version     : 0.0.0
 # Created On  : 2015-07-10
-# Modified On : 2015-07-10
+# Modified On : 2015-07-15
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -38,10 +38,18 @@ echo "configuring R"
 source install_r.sh 
 
 echo "linking dotfiles"
-ln -s ~/dev_dotfiles/dot_vim ~/.vim
-ln -s ~/dev_dotfiles/dot_vimrc ~/.vimrc
-ln -s ~/dev_dotfiles/dot_gitconfig ~/.gitconfig
-ln -s ~/dev_dotfiles/dot_bashrc ~/.bashrc
-ln -s ~/dev_dotfiles/dot_bash_aliases ~/.bash_aliases
-ln -s ~/dev_dotfiles/dot_Rprofile ~/.Rprofile
-ln -s ~/dev_dotfiles/dot_ssh ~/.ssh
+mv ~/.vim ~/.vim_old
+mv ~/.vimrc ~/.vimrc_old
+mv ~/.gitconfig ~/.gitconfig_old
+mv ~/.bashrc ~/.bashrc_old
+mv ~/.bash_aliases ~/.bash_aliases_old
+mv ~/.Rprofile ~/.Rprofile_old
+mv ~/.ssh ~/.ssh_old
+
+ln -s ~/dev_dotfiles/ubuntu/dot_vim ~/.vim
+ln -s ~/dev_dotfiles/ubuntu/dot_vimrc ~/.vimrc
+ln -s ~/dev_dotfiles/ubuntu/dot_gitconfig ~/.gitconfig
+ln -s ~/dev_dotfiles/ubuntu/dot_bashrc ~/.bashrc
+ln -s ~/dev_dotfiles/ubuntu/dot_bash_aliases ~/.bash_aliases
+ln -s ~/dev_dotfiles/ubuntu/dot_Rprofile ~/.Rprofile
+ln -s ~/dev_dotfiles/ubuntu/dot_ssh ~/.ssh
