@@ -1,0 +1,15 @@
+# This file contains the list of programs to download.
+
+ExamDiff:      Compare two files
+RichCopy:      Network files copy
+Windwos        Grep: grep
+SharpKeys:     Changes CapsLock to Escape
+TexStudio:     Latex editor
+TheGun:        Large text file opener
+join.me:       Online conference calls
+Calibre:       epub reader
+MinGW:         Windows C++ editor
+PrimoPDF:      PDF Maker
+PDFill:        PDF Editor
+Launchy:       Windows program launcher
+PhreseExpress: Phrase editor
