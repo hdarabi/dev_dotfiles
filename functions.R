@@ -5,3 +5,4 @@ str2   = function(x){ str(x, max.level=2)}
 str3   = function(x){ str(x, max.level=3)}
 rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
 fch    = function(x){ levels(x)[x] }
+getlines = function(x){ length(strsplit(inside_file, "\n")[[1]]) }
