@@ -43,6 +43,7 @@
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
 \newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\providecommand{\keywords}[1]{\textbf{\textit{Index terms---}} #1}\textbf{}
 
 %%% code commands
 \newcommand{\code}[1]{\texttt{#1}}
