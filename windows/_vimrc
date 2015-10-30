@@ -24,6 +24,8 @@ Plugin 'Gundo'
 Plugin 'supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ZoomWin'
+Plugin 'bronson/vim-trailing-whitespace'
 call vundle#end() 
 filetype plugin indent on
 set guifont=Lucida_Console:h16
@@ -37,6 +39,9 @@ set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set winaltkeys=yes
+if has('gui_running')
+  set guifont=Lucida_Console:h13
+endif
 let vimrplugin_assign = 0
 autocmd VimEnter * echo "Hi Hamid, you are about to do an awesome work, YAY!"
 set autochdir
@@ -45,12 +50,20 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-D> :nohl<CR><C-l>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F9>  :ZoomWin<CR>
+inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 map <C-N> :NERDTreeToggle<CR>
 set splitbelow
 set splitright
 let g:templates_directory = 'c:\hamid\00git\templates'
 let g:tempates_no_autocmd = 0
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
 autocmd Bufwritepre,filewritepre *.* execute "normal ma"
-autocmd Bufwritepre,filewritepre *.* exe "1,". 10 . "/Modified On :.*/s/Modified On :.*/Modified On : " .strftime("%Y-%m-%d")
-autocmd Bufwritepre,filewritepre *.* exe "1,". 10 . "/Version/norm! $h \<C-A>"
+autocmd Bufwritepre,filewritepre *.* exe "1,10" . "g/Modified On :.*/s/Modified On :.*/Modified On : " .strftime("%Y-%m-%d")
+autocmd Bufwritepre,filewritepre *.* exe "1,10" . "g/Version/norm! $h \<C-A>"
 autocmd bufwritepost,filewritepost *.* execute "normal `a"
