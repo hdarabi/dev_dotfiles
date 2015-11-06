@@ -1,19 +1,12 @@
-if(interactive()){
-       library(colorout)
-       library(setwidth)
-       options(vimcom.verbose = 1) # optional
-       library(vimcom)
-}
-
-options(vimcom.verbose = 1)
-library(vimcom)
+options(scipen=100)
 unlink(".RData")
 cat("\014")
 library("utils")
 library("stats")
-
+library(vimcom)
+options(vimcom.verbose = 1)
 df  = read.csv("c:\\users\\hamid.darabi\\documents\\quotes.csv", stringsAsFactors=FALSE)
-rnd = 1 + floor(runif(1,1,nrow(df)-1))
+rnd = 1 + floor( runif( 1, 1, nrow(df) ) )
 
 if( as.POSIXlt(Sys.time())$hour < 12 ){ 
     timeStr = "Good Morning,"
@@ -21,7 +14,26 @@ if( as.POSIXlt(Sys.time())$hour < 12 ){
     timeStr = "Good afternoon,"
 }
 
-print( paste("Hi Hamid!", timeStr, "By the way,", df[rnd,"author"], "says:") )
 print( paste( df[rnd,"quote"]) )
-print("Now, I am ready:" )
+print( paste("Hi Hamid!", timeStr ) )
 rm(list = ls())
+na0    = function(x){ x[is.na(x)] = 0; x }
+sna    = function(x){ sum(is.na(x)) }
+str1   = function(x){ print(deparse(substitute(x))); str(x, max.level=1)}
+str2   = function(x){ print(deparse(substitute(x))); str(x, max.level=2)}
+str3   = function(x){ print(deparse(substitute(x))); str(x, max.level=3)}
+rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
+fch    = function(x){ levels(x)[x] }
+l      = function(x){ length(x) }
+getlines  = function(x){ length(strsplit(inside_file, "\n")[[1]]) }
+sc     = function(x){ sapply(x, class) }
+g      = function(pattern, folder = getwd(), rec = TRUE){
+    filesList = dir(folder, pattern = ".R$", recursive = rec)
+    for(fileName in filesList){
+        content = readLines(paste0(folder, "//", fileName))
+        whichLines = grep(pattern, content)
+        for(anyLine in whichLines){
+            print(paste(fileName, "-", anyLine, ":", content[anyLine] ))
+        }
+    }
+}
