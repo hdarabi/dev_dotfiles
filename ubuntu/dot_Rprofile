@@ -25,8 +25,10 @@ str3   = function(x){ print(deparse(substitute(x))); str(x, max.level=3)}
 rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
 fch    = function(x){ levels(x)[x] }
 l      = function(x){ length(x) }
-getlines  = function(x){ length(strsplit(inside_file, "\n")[[1]]) }
+getlines = function(x){ length(strsplit(inside_file, "\n")[[1]]) }
 sc     = function(x){ sapply(x, class) }
+trim   = function (x) gsub("^\\s+|\\s+$", "", x)
+
 g      = function(pattern, folder = getwd(), rec = TRUE){
     filesList = dir(folder, pattern = ".R$", recursive = rec)
     for(fileName in filesList){
