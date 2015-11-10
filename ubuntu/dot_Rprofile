@@ -37,3 +37,10 @@ g      = function(pattern, folder = getwd(), rec = TRUE){
         }
     }
 }
+
+last = function(x){
+        if(class(x) == "data.frame")
+                return(x[, NCOL(x), drop = TRUE])
+        if(class(x) %in% c("numeric", "character", "integer", "factor"))
+                return(x[length(x)])
+}
