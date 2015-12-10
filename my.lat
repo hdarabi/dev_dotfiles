@@ -13,6 +13,7 @@
 \usepackage{caption}
 \usepackage{latexsym}
 \usepackage{amssymb}
+\usepackage{bm}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -41,6 +42,7 @@
 %%% math commands 
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
+\newcommand{\mb}[1]{\boldsymbol{#1}}
 \newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \providecommand{\keywords}[1]{\textbf{\textit{Index terms---}} #1}\textbf{}
