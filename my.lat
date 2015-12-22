@@ -1,6 +1,9 @@
 \usepackage{listings}
 \usepackage{color}
+\usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{times}
@@ -12,8 +15,12 @@
 \usepackage{cleveref}
 \usepackage{caption}
 \usepackage{latexsym}
-\usepackage{amssymb}
 \usepackage{bm}
+\usepackage{bbold}
+\usepackage{appendix}
+\usepackage{authblk}
+\usepackage{flafter}
+\usepackage[table]{xcolor}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -43,9 +50,13 @@
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
 \newcommand{\mb}[1]{\boldsymbol{#1}}
+\newcommand\Mod[3]{#1\stackrel{\mathclap{\normalfont\mbox{#2}}}{\equiv}#3}
+\newcommand\ModTiny[3]{#1\stackrel{\mathclap{\tiny\mbox{#2}}}{\equiv}#3}
 \newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\providecommand{\keywords}[1]{\textbf{\textit{Index terms---}} #1}\textbf{}
+\newcommand\mbar[1]{\overline{#1}}
+\newcommand\munbar[1]{\underline{#1}}
+\newcommand{\ignore}[1]{}
 
 %%% code commands
 \newcommand{\code}[1]{\texttt{#1}}
