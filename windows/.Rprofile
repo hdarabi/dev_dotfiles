@@ -75,9 +75,7 @@ mytags  = function(folder = ".", rec = TRUE, ofile = "TAGS"){
                 }else{
                     tagName = gsub('([ \t]*)' , '', gsub('([ \t])*(<-|=)([ \t])*function.*', '', lineContent))
                 }
-                if(grepl('MMMplot', tagName)) browser()
-                # regexpr(tagName, lineContent)[1] 
-                tagAddress = paste0(anyLine, "| g/", tagName)
+                tagAddress = paste0("norm! ", anyLine, "G", regexpr(tagName, lineContent)[1], "|")
                 cat(paste0(tagName, "\t", path, "\t", tagAddress, "\n"))
             }
         }
