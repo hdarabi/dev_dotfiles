@@ -12,6 +12,7 @@ set foldlevel=99
 colorscheme koehler
 filetype off
 set rtp +=~/vimfiles/bundle/Vundle.vim
+let vimrplugin_r_path = 'C:\ProgramFiles\R\R-3.2.2\bin\x64\'
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -26,6 +27,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ZoomWin'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Raimondi/delimitMate'
+Plugin 'php.vim'
+Plugin 'joonty/vim-phpqa'
+Plugin 'joonty/vim-phpunitqf'
 call vundle#end() 
 filetype plugin indent on
 set guifont=Lucida_Console:h16
