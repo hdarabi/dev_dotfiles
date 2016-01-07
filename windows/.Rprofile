@@ -1,3 +1,12 @@
+##################################################################
+# Name        : .Rprofile
+# Description : This is my handy functions list.
+# Version     : 0.0.2
+# Created On  : 2016-01-07
+# Modified On : 2016-01-07
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+
 options(scipen=100)
 unlink(".RData")
 cat("\014")
@@ -59,7 +68,7 @@ mytags  = function(folder = ".", rec = TRUE, ofile = "TAGS"){
                     '!_TAG_PROGRAM_AUTHOR Hamid R. Darabi\n',
                     '!_TAG_PROGRAM_NAME	HamidRScript\n',
                     '!_TAG_PROGRAM_URL	http://hamid.darabi.org\n',
-                    '!_TAG_PROGRAM_VERSION	1.0\n')
+                    '!_TAG_PROGRAM_VERSION	1.0\n\n')
     cat(header)
     for(fileName in filesList){
         path = paste0(folder, "/", fileName)
@@ -81,5 +90,6 @@ mytags  = function(folder = ".", rec = TRUE, ofile = "TAGS"){
         }
         cat("\n")
     }
+    sink()
     sink()
 }
