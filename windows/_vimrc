@@ -9,6 +9,7 @@ set spell spelllang=en_us
 set diffexpr=MyDiff()
 set foldmethod=indent
 set foldlevel=99
+set tags=./tags.txt;,tags.txt;
 colorscheme koehler
 filetype off
 set rtp +=~/vimfiles/bundle/Vundle.vim
