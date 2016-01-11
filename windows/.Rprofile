@@ -1,7 +1,7 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.4
+# Version     : 0.0.5
 # Created On  : 2016-01-07
 # Modified On : 2016-01-11
 # Author      : Hamid R. Darabi, Ph.D.
@@ -112,7 +112,11 @@ getVarName = function(selections, ID){
             i = i - 1
         }
     }
-    paste0( curPath, collapse = "")
+    curPath = gsub("\\$\\$", "$", paste0(curPath, collapse = "$"))
+    curPath = gsub("\\$$", "", curPath)
+    curPath = gsub("@\\$", "@", curPath)
+    curPath = gsub("\\$\\[", "[", curPath)
+    curPath
 }
 
 # This function finds a variable name in a complex class
@@ -135,6 +139,9 @@ vf = function(var, pattern, first = TRUE){
         selections[[i]] = list(curLevel = curLevel, curName = curName)
     }
     mat = grep(paste0("\\$([ \t]*)", pattern, "([ \t]*):"), res)
+    if(length(mat) == 0){
+        return ("Variable not found.")
+    }
     if(first){
         print(paste0(var1, getVarName(selections, mat[1])))
     }else{
