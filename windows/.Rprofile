@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.5
+# Version     : 0.0.6
 # Created On  : 2016-01-07
-# Modified On : 2016-01-11
+# Modified On : 2016-01-12
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -104,11 +104,11 @@ strCount = function(x, pattern, split){
 trim = function (x) gsub("^\\s+|\\s+$", "", x)
 
 getVarName = function(selections, ID){
-    i = selections[[ID]]$curLevel
-    curPath = as.character(i)
+    i = as.numeric(selections[ID, "curLevel"])
+    curPath = character(i)
     for(j in ID:1){
-        if(selections[[j]]$curLevel == i){
-            curPath[i] = selections[[j]]$curName
+        if(selections[j, "curLevel"] == i){
+            curPath[i] = selections[j, "curName"]
             i = i - 1
         }
     }
@@ -121,26 +121,25 @@ getVarName = function(selections, ID){
 
 # This function finds a variable name in a complex class
 vf = function(var, pattern, first = TRUE){
-    sink("a01ce5F0LbCH7KT")
-    str(var)
-    sink()
-    res = readLines("a01ce5F0LbCH7KT")
-    selections = list()
+    res = capture.output(str(var))
+    n = length(res)
+    selections = data.frame(curLevel = character(n), curName = character(n), stringsAsFactors = FALSE)
     curPath = list()
     var1 = as.character(match.call()[2])
     inList = FALSE
     j = 0
-    for(i in 1:length(res)){
+    for(i in 1:n){
         curLine = res[i]
         curLevel = strCount(curLine, "\\.\\.", " ") + 1
         curName = trim(substr(curLine, regexpr("\\$|@", curLine)[1]+1, regexpr(":", curLine)[1]-1))
         if(curName == "" & grepl("class", curLine)) curName = "@"
         if(curName == "" & grepl("List", curLine)) curName = "[[]]$"
-        selections[[i]] = list(curLevel = curLevel, curName = curName)
+        selections[i,"curLevel"] = curLevel
+        selections[i, "curName"] = curName
     }
     mat = grep(paste0("\\$([ \t]*)", pattern, "([ \t]*):"), res)
     if(length(mat) == 0){
-        return ("Variable not found.")
+        return ("Variable not found. Please make sure you loaded class definition.")
     }
     if(first){
         print(paste0(var1, getVarName(selections, mat[1])))
