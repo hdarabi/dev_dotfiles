@@ -61,7 +61,12 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F9>  :ZoomWin<CR>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
-map <C-N> :NERDTreeToggle<CR>
+map <C-E> :NERDTreeToggle<CR>
+map <C-N> :tabn<CR>
+map <C-P> :tabp<CR>
+map <C-O> :tabnew<CR>
+map <C-X> :tabclose<CR>
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 set splitbelow
 set splitright
 let g:templates_directory = 'c:\hamid\00git\templates'

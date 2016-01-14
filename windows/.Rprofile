@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.6
+# Version     : 0.0.11
 # Created On  : 2016-01-07
-# Modified On : 2016-01-12
+# Modified On : 2016-01-14
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -60,7 +60,7 @@ getLast = function(x){
                 return(x[length(x)])
 }
 
-mytags  = function(folder = ".", rec = TRUE, ofile = "TAGS"){
+mytags  = function(folder = ".", rec = TRUE, ofile = "tags.txt"){
     filesList = dir(folder, pattern = ".R$|.r$", recursive = rec)
     sink(ofile)
     header = paste0('!_TAG_FILE_FORMAT	2\n',
@@ -123,6 +123,7 @@ getVarName = function(selections, ID){
 vf = function(var, pattern, first = TRUE){
     res = capture.output(str(var))
     n = length(res)
+    if(n < 3 & grepl("class", res[1])) print("Please make sure you loaded class definition.")
     selections = data.frame(curLevel = character(n), curName = character(n), stringsAsFactors = FALSE)
     curPath = list()
     var1 = as.character(match.call()[2])
@@ -139,7 +140,7 @@ vf = function(var, pattern, first = TRUE){
     }
     mat = grep(paste0("\\$([ \t]*)", pattern, "([ \t]*):"), res)
     if(length(mat) == 0){
-        return ("Variable not found. Please make sure you loaded class definition.")
+        return ("Variable not found.")
     }
     if(first){
         print(paste0(var1, getVarName(selections, mat[1])))
@@ -147,5 +148,37 @@ vf = function(var, pattern, first = TRUE){
         for(ID in mat){
             print(paste0(var1, getVarName(selections, ID)))
         }
+    }
+}
+
+perm = function(n, x) factorial(n) / factorial(n-x)
+
+runner = function(fileName, runLines = 0, path = ".", notExists = NULL){
+    path = paste0(path, "/", fileName)
+    flag = FALSE
+    if(!is.null(notExists)){
+        if(!any(grepl(notExists, ls()))) flag = TRUE
+    }else{
+        flag = TRUE
+    }
+    if(flag){
+        if(runLines == 0){
+            source(path)
+        }else{
+            runL = as.numeric(strsplit(runLines, "-")[[1]])
+            if(length(runL) == 1){
+                st = read.table(path, skip = runL[1]-1, nrows=1)
+                eval(parse(text = st))
+                print(paste("Line", runLines, "from file", fileName))
+            }else if(length(runL) == 2){
+                st = scan(path, what = "character", sep ="\n", skip = runL[1]-1, nlines=runL[2] - runL[1]+1)
+                eval(parse(text = st))
+                print(paste("Line", runLines, "from file", fileName))
+            }else{
+                print("Will be added later.")
+            }
+        }
+    }else if(!is.null(notExists)){
+        print(paste("Running", fileName, "omitted because", notExists, "is present."))
     }
 }
