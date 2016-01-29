@@ -24,6 +24,8 @@ Plugin 'aperezdc/vim-template'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'Gundo'
 Plugin 'supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ZoomWin'
@@ -33,7 +35,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'php.vim'
 Plugin 'joonty/vim-phpqa'
 Plugin 'joonty/vim-phpunitqf'
-call vundle#end() 
+call vundle#end()
 filetype plugin indent on
 set guifont=Lucida_Console:h16
 set hlsearch!
@@ -52,6 +54,9 @@ endif
 let vimrplugin_assign = 0
 autocmd VimEnter * echo "Hi Hamid, you are about to do an awesome work, YAY!"
 set autochdir
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -62,8 +67,6 @@ nnoremap <F9>  :ZoomWin<CR>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 map <C-E> :NERDTreeToggle<CR>
-map <C-N> :tabn<CR>
-map <C-P> :tabp<CR>
 map <C-O> :tabnew<CR>
 map <C-X> :tabclose<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
