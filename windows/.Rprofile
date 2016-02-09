@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.11
+# Version     : 0.0.27
 # Created On  : 2016-01-07
-# Modified On : 2016-01-14
+# Modified On : 2016-02-09
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -40,6 +40,7 @@ getlines  = function(x){
 }
 
 sc     = function(x){ sapply(x, class) }
+h      = function(x, n = 5){ head(x, 5) }
 g      = function(pattern, folder = ".", rec = TRUE){
     filesList = dir(folder, pattern = ".R$|.r$", recursive = rec)
     whichLines = NULL
@@ -154,10 +155,11 @@ vf = function(var, pattern, first = TRUE){
 perm = function(n, x) factorial(n) / factorial(n-x)
 
 runner = function(fileName, runLines = 0, path = ".", notExists = NULL){
-    path = paste0(path, "/", fileName)
+    e = parent.frame(1)
+    path = paste0(path, "/", fileName, ".R")
     flag = FALSE
     if(!is.null(notExists)){
-        if(!any(grepl(notExists, ls()))) flag = TRUE
+        if(!any(grepl(notExists, ls(envir = e)))) flag = TRUE
     }else{
         flag = TRUE
     }
@@ -168,11 +170,11 @@ runner = function(fileName, runLines = 0, path = ".", notExists = NULL){
             runL = as.numeric(strsplit(runLines, "-")[[1]])
             if(length(runL) == 1){
                 st = read.table(path, skip = runL[1]-1, nrows=1)
-                eval(parse(text = st))
+                eval(parse(text = st), envir = e)
                 print(paste("Line", runLines, "from file", fileName))
             }else if(length(runL) == 2){
                 st = scan(path, what = "character", sep ="\n", skip = runL[1]-1, nlines=runL[2] - runL[1]+1)
-                eval(parse(text = st))
+                eval(parse(text = st), envir = e)
                 print(paste("Line", runLines, "from file", fileName))
             }else{
                 print("Will be added later.")
@@ -181,4 +183,13 @@ runner = function(fileName, runLines = 0, path = ".", notExists = NULL){
     }else if(!is.null(notExists)){
         print(paste("Running", fileName, "omitted because", notExists, "is present."))
     }
+}
+
+inName = function(df, pattern, noPattern = NULL){
+        if(is.null(noPattern)){
+                selCols = which(grepl(pattern, names(df)))
+        }else{
+                selCols = which( grepl(pattern, names(df)) & !grepl(noPattern, names(df)) )
+        }
+        names(df)[ selCols ]
 }
