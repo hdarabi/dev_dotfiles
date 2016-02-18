@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.27
+# Version     : 0.0.30
 # Created On  : 2016-01-07
-# Modified On : 2016-02-09
+# Modified On : 2016-02-18
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -28,9 +28,6 @@ print( paste("Hi Hamid!", timeStr ) )
 rm(list = ls())
 na0    = function(x){ x[is.na(x)] = 0; x }
 sna    = function(x){ sum(is.na(x)) }
-str1   = function(x){ print(deparse(substitute(x))); str(x, max.level=1)}
-str2   = function(x){ print(deparse(substitute(x))); str(x, max.level=2)}
-str3   = function(x){ print(deparse(substitute(x))); str(x, max.level=3)}
 rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
 fch    = function(x){ levels(x)[x] }
 l      = function(x){ length(x) }
@@ -193,3 +190,5 @@ inName = function(df, pattern, noPattern = NULL){
         }
         names(df)[ selCols ]
 }
+
+findOut = function(x, n = 2){ which(abs(x - mean(x)) >= n * sd(x)) } 
