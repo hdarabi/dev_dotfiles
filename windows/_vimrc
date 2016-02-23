@@ -13,7 +13,7 @@ set tags=./tags.txt;,tags.txt;
 colorscheme koehler
 filetype off
 set rtp +=~/vimfiles/bundle/Vundle.vim
-let vimrplugin_r_path = 'C:\ProgramFiles\R\R-3.2.2\bin\x64\'
+let vimrplugin_r_path = 'C:\R\bin\x64\'
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -22,6 +22,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'aperezdc/vim-template'
 Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'jalvesaq/R-Vim-runtime'
 Plugin 'Gundo'
 Plugin 'supertab'
 Plugin 'SirVer/ultisnips'
@@ -55,8 +56,8 @@ let vimrplugin_assign = 0
 autocmd VimEnter * echo "Hi Hamid, you are about to do an awesome work, YAY!"
 set autochdir
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -68,7 +69,7 @@ inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
-map <C-X> :tabclose<CR>
+map <C-W> :tabclose<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 set splitbelow
 set splitright
