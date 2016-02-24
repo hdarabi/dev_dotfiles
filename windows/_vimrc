@@ -55,9 +55,6 @@ endif
 let vimrplugin_assign = 0
 autocmd VimEnter * echo "Hi Hamid, you are about to do an awesome work, YAY!"
 set autochdir
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -71,6 +68,9 @@ map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
 map <C-W> :tabclose<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 set splitbelow
 set splitright
 let g:templates_directory = 'c:\hamid\00git\templates'

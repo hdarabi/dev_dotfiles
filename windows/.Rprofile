@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.30
+# Version     : 0.0.35
 # Created On  : 2016-01-07
-# Modified On : 2016-02-18
+# Modified On : 2016-02-24
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -32,7 +32,7 @@ rmwarn = function(){ assign("last.warning", NULL, envir = baseenv()) }
 fch    = function(x){ levels(x)[x] }
 l      = function(x){ length(x) }
 getlines  = function(x){
-    content = readLines(x)
+    content = suppressWarnings(readLines(x))
     print( length(content) )
 }
 
@@ -42,7 +42,7 @@ g      = function(pattern, folder = ".", rec = TRUE){
     filesList = dir(folder, pattern = ".R$|.r$", recursive = rec)
     whichLines = NULL
     for(fileName in filesList){
-        content = readLines(paste0(folder, "/", fileName))
+        content = suppressWarnings(readLines(paste0(folder, "/", fileName)))
         whichLines = grep(pattern, content)
         for(anyLine in whichLines){
             print(paste(fileName, "-", anyLine, ":", content[anyLine] ))
