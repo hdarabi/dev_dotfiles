@@ -1,12 +1,25 @@
+##################################################################
+# Name        : r.snippets
+# Description : My [R] programming snippets
+# Version     : 0.0.7
+# Created On  : 2016-02-29
+# Modified On : 2016-02-29
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+
+snippet setwd "Sets the active directory to current path" b
+setwd("`!p snip.rv = os.getcwd().replace('\\', '/')`")
+endsnippet
+
 snippet so "Adds a new source to the [R] script" b
 source(paste0(${1:path}, "${2:file name}"))
 endsnippet
 
-snippet #temp "Creates a new template for *.R files" b
+snippet temp "Creates a new template for *.R files" b
 ##################################################################
 # Name        : ${1:file name}
 # Description : ${2:description}
-# Version     : 0.0.5
+# Version     : 0.0.0
 # Created On  : ${3:YYYY-MM-DD}
 # Modified On : $3
 # Author      : Hamid R. Darabi, Ph.D.

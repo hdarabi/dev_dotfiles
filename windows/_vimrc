@@ -66,7 +66,7 @@ inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
-map <C-W> :tabclose<CR>
+map <C-C> :tabclose<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
