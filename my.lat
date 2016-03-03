@@ -1,5 +1,5 @@
 \usepackage{listings}
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -26,6 +26,16 @@
 
 %%% format commands
 \newcommand{\HD}[1]{{\bf \small [#1 --Hamid]}}
+\newcommand*{\mathcolor}{}
+\def\mathcolor#1#{\mathcoloraux{#1}}
+\newcommand*{\mathcoloraux}[3]{%
+\protect\leavevmode
+\begingroup
+\color#1{#2}#3%
+\endgroup
+}
+\newcommand{\RED}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\MRED}[1]{\mathcolor{red}{#1}}
 \newenvironment{proposition}[1][]{{\bfseries Proposition #1:}}{\hfill\square}
 \newenvironment{theory}[1][]{{\bfseries Theory #1:}}{\hfill\square}
 \newenvironment{lemma}[1][]{{\bfseries Lemma #1:}}{\hfill\square}
