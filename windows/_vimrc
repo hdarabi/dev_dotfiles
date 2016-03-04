@@ -27,8 +27,6 @@ Plugin 'Gundo'
 Plugin 'supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ZoomWin'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Yggdroot/indentLine'
@@ -36,8 +34,19 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'php.vim'
 Plugin 'joonty/vim-phpqa'
 Plugin 'joonty/vim-phpunitqf'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/unite.vim'
 call vundle#end()
 filetype plugin indent on
+let g:unite_source_history_yank_enable = 1
+try
+  let g:unite_source_rec_async_command = 'ag --nocolor --nogroup -g ""'
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+"nnoremap <space><space> :Unite -start-insert file_rec/async<cr>
+"nnoremap <space>r <Plug>(unite_restart)
 set guifont=Lucida_Console:h16
 set hlsearch!
 nnoremap <F3> :set hlsearch!<CR>

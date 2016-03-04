@@ -13,3 +13,11 @@ PrimoPDF:      PDF Maker
 PDFill:        PDF Editor
 Launchy:       Windows program launcher
 PhreseExpress: Phrase editor
+
+# Install choco by using the following command at administrative shell
+
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+
+# install ag by the following command
+
+choco install ag
