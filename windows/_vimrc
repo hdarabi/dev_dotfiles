@@ -22,7 +22,7 @@ Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'aperezdc/vim-template'
-Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'hdarabi/Vim-R-plugin'
 Plugin 'jalvesaq/R-Vim-runtime'
 Plugin 'Gundo'
 Plugin 'supertab'
@@ -71,13 +71,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-D> :nohl<CR><C-l>
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F9>  :ZoomWin<CR>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 nnoremap Q <nop> 
-nmap <F5> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
+nnoremap <F2> :Unite file_rec buffer<CR>
+nnoremap <F3> :exec("Unite -input=".expand("<cword>")." file_rec")<CR>
+" command! -nargs=1 FO execute "Unite -input=".string(<q-args>)." file_rec"
+nnoremap <F5> :SCCompile<cr>
+nnoremap <F7> :SCCompileRun<cr>
+nnoremap <F8> :GundoToggle<CR>
+nnoremap <F9> :ZoomWin<CR>
 map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
 map <C-C> :tabclose<CR>
@@ -85,7 +88,7 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let mapleader=","
+"let mapleader=","
 set wildmode=longest,list,full
 set wildmenu
 set splitbelow
