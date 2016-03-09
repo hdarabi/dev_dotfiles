@@ -81,6 +81,7 @@ nnoremap <F5> :SCCompile<cr>
 nnoremap <F7> :SCCompileRun<cr>
 nnoremap <F8> :GundoToggle<CR>
 nnoremap <F9> :ZoomWin<CR>
+inoremap <Space><Space> <C-N>
 map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
 map <C-C> :tabclose<CR>
