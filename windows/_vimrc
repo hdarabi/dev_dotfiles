@@ -51,7 +51,6 @@ endtry
 "nnoremap <space>r <Plug>(unite_restart)
 set guifont=Lucida_Console:h16
 set hlsearch!
-nnoremap <F3> :set hlsearch!<CR>
 set tw=79
 set formatoptions+=t
 set number                      "Line numbers are good
@@ -78,7 +77,8 @@ nnoremap <F2> :Unite file_rec buffer<CR>
 nnoremap <F3> :exec("Unite -input=".expand("<cword>")." file_rec")<CR>
 " command! -nargs=1 FO execute "Unite -input=".string(<q-args>)." file_rec"
 nnoremap <F5> :SCCompile<cr>
-nnoremap <F7> :SCCompileRun<cr>
+nnoremap <F6> :SCCompileRun<cr>
+nnoremap <F7> :set hlsearch!<CR>
 nnoremap <F8> :GundoToggle<CR>
 nnoremap <F9> :ZoomWin<CR>
 inoremap <C-Space> <C-N>
@@ -89,7 +89,7 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-"let mapleader=","
+let mapleader=","
 set wildmode=longest,list,full
 set wildmenu
 set splitbelow

@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : txt.snippets
 # Description : My latex snippets
-# Version     : 0.0.16
+# Version     : 0.0.18
 # Created On  : 2016-03-04
-# Modified On : 2016-03-04
+# Modified On : 2016-03-11
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -113,25 +113,25 @@ endsnippet
 
 snippet eq "Generate a new equation - avoid" b
 \begin{equation}\label{eq:${1:label}}
-${2:first} \\
-${3:second} \\
+${2:first} \\\\
+${3:second} \\\\
 ${4:third}
 \end{equation}
 endsnippet
 
 snippet align "Generates aligned environment" b
 \begin{align}\label{eq:${1:label}}
-	${2:rhs} &= ${3:lhs}\\
-	${4:rhs} &= ${5:lhs}\\
-	${6:rhs} &= ${7:lhs}
+	${2:lhs} &= ${3:rhs}\\\\
+	${4:lhs} &= ${5:rhs}\\\\
+	${6:lhs} &= ${7:rhs}
 \end{align}
 endsnippet
 
 snippet gather "gather environment" b
 \begin{gather}\label{eq:${1:label}}
-	${2:line} \\
-	${3:line} \\
-	${4:line} 
+	${2:line} \\\\
+	${3:line} \\\\
+	${4:line}
 \end{gather}
 endsnippet
 
