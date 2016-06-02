@@ -36,14 +36,14 @@
 }
 \newcommand{\RED}[1]{\textbf{\textcolor{red}{#1}}}
 \newcommand{\MRED}[1]{\mathcolor{red}{#1}}
-\newenvironment{proposition}[1][]{{\bfseries Proposition #1:}}{\hfill\square}
-\newenvironment{theory}[1][]{{\bfseries Theory #1:}}{\hfill\square}
-\newenvironment{lemma}[1][]{{\bfseries Lemma #1:}}{\hfill\square}
-\newenvironment{definition}[1][]{{\bfseries Definition #1:}}{\hfill\square}
-\newenvironment{coro}[1][]{{\bfseries Corollary #1:}}{\hfill\square}
-\newenvironment{proof}{{\bfseries Proof:}}{\hfill\blacksquare}
-\newenvironment{conj}{{\bfseries Conjecture:}}{\hfill\blacksquare}
-\newenvironment{axiom}{{\bfseries Axiom:}}{\hfill\blacksquare}
+\newenvironment{proposition}[1][]{{\bfseries Proposition #1:}}{$\hfill\square$}
+\newenvironment{theory}[1][]{{\bfseries Theory #1:}}{$\hfill\square$}
+\newenvironment{lemma}[1][]{{\bfseries Lemma #1:}}{$\hfill\square$}
+\newenvironment{definition}[1][]{{\bfseries Definition #1:}}{$\hfill\square$}
+\newenvironment{coro}[1][]{{\bfseries Corollary #1:}}{$\hfill\square$}
+\newenvironment{proof}{{\bfseries Proof:}}{$\hfill\blacksquare$}
+\newenvironment{conj}{{\bfseries Conjecture:}}{$\hfill\blacksquare$}
+\newenvironment{axiom}{{\bfseries Axiom:}}{$\hfill\blacksquare$}
 \newenvironment{goals}{\begin{itemize}\setlength\itemsep{-0.5em}}{\end{itemize}}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -60,9 +60,9 @@
 \newcommand{\CEIL}[1]{\lceil #1 \rceil}
 \newcommand{\FLOOR}[1]{\lfloor #1 \rfloor}
 \newcommand{\mb}[1]{\boldsymbol{#1}}
-\newcommand\Mod[3]{#1\stackrel{\mathclap{\normalfont\mbox{#2}}}{\equiv}#3}
+\newcommand\Mod[3]{#1\stackrel{\mathclap{\mbox{#2}}}{\equiv}#3}
 \newcommand\ModTiny[3]{#1\stackrel{\mathclap{\tiny\mbox{#2}}}{\equiv}#3}
-\newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
+%\newcommand{\Mod}[3]{\ #1\equiv#2\text{\;mod} \left(#3\right)}
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand\mbar[1]{\overline{#1}}
 \newcommand\munbar[1]{\underline{#1}}
