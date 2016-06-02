@@ -1,0 +1,51 @@
+Download SharpKeys from
+https://sharpkeys.codeplex.com/
+Change caps-lock with escape
+*******************************
+Install Git
+*******************************
+Install GVim 32bit version
+*******************************
+Install R
+Make sure there is not space in the installation path.
+*******************************
+Install RStudio
+*******************************
+Install DualMonitor from
+https://sourceforge.net/projects/dualmonitortool/files/latest/download
+*******************************
+Install MiKTex from
+http://miktex.org/download
+*******************************
+Install TextStudio from
+https://sourceforge.net/projects/texstudio/files/texstudio/TeXstudio%202.11.0/texstudio-2.11.0-win-qt5.5.1.exe/download
+*******************************
+Install Evince
+http://download.cnet.com/Evince-for-Windows/3000-10743_4-75755341.html
+*******************************
+Install WinDJView from this
+http://windjview.sourceforge.net/
+*******************************
+Install R Packages
+*******************************
+Set up your folders
+BY typing explorer "c:\hamid" you can set the icon on quick lunch
+*******************************
+Install Python 2.7 version 32 bits
+Add it to path
+*******************************
+Configuring vim
+Make sure that vim sees python with the following commands
+:python import sys; print sys.version
+Follow commands in the link for Vundle
+https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows
+Copy _vimrc
+Run :PluginInstall
+*******************************
+Download and Install Rtools
+https://cran.r-project.org/bin/windows/Rtools/
+*******************************
+Copy .Rprofile to c:\users\user.name\documents
+*******************************
+Copy UltiSnip folder from dev_dofiles to the .vim folder under vim-snippets
+in the same folder name
