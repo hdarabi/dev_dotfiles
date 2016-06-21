@@ -13,6 +13,7 @@ set tags=./tags.txt;,tags.txt;
 colorscheme koehler
 filetype off
 set rtp +=~/vimfiles/bundle/Vundle.vim
+let $PYTHONPATH = "C:\\Python27\\Lib;C:\\Python27\\DLLs;C:\\Python27\\Lib\\lib-tk"
 let vimrplugin_r_path = 'C:\R\bin\x64\'
 call vundle#begin()
 Plugin 'xuhdev/SingleCompile.git'
@@ -22,8 +23,6 @@ Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'aperezdc/vim-template'
-Plugin 'hdarabi/Vim-R-plugin'
-Plugin 'jalvesaq/R-Vim-runtime'
 Plugin 'Gundo'
 Plugin 'supertab'
 Plugin 'SirVer/ultisnips'
@@ -32,9 +31,6 @@ Plugin 'ZoomWin'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
-Plugin 'php.vim'
-Plugin 'joonty/vim-phpqa'
-Plugin 'joonty/vim-phpunitqf'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/unite.vim'
