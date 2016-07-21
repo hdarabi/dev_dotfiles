@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.35
+# Version     : 0.0.40
 # Created On  : 2016-01-07
-# Modified On : 2016-02-24
+# Modified On : 2016-07-21
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -12,10 +12,10 @@ unlink(".RData")
 cat("\014")
 library("utils")
 library("stats")
-library(vimcom)
-options(vimcom.verbose = 1)
-df  = read.csv("c:\\users\\hamid.darabi\\documents\\quotes.csv", stringsAsFactors=FALSE)
-rnd = 1 + floor( runif( 1, 1, nrow(df) ) )
+#library(vimcom)
+#options(vimcom.verbose = 1)
+#df  = read.csv("c:\\users\\hamid.darabi\\documents\\quotes.csv", stringsAsFactors=FALSE)
+#rnd = 1 + floor( runif( 1, 1, nrow(df) ) )
 
 if( as.POSIXlt(Sys.time())$hour < 12 ){ 
     timeStr = "Good Morning,"
@@ -23,7 +23,7 @@ if( as.POSIXlt(Sys.time())$hour < 12 ){
     timeStr = "Good afternoon,"
 }
 
-print( paste( df[rnd,"quote"]) )
+# print( paste( df[rnd,"quote"]) )
 print( paste("Hi Hamid!", timeStr ) )
 rm(list = ls())
 na0    = function(x){ x[is.na(x)] = 0; x }
@@ -71,7 +71,7 @@ mytags  = function(folder = ".", rec = TRUE, ofile = "tags.txt"){
     for(fileName in filesList){
         path = paste0(folder, "/", fileName)
         # cat(paste0(path, "\n"))
-        content = readLines(paste0(folder, "/", fileName))
+        content = suppressWarnings(readLines(paste0(folder, "/", fileName)))
         pattern = '([ \t]*)+?([.A-Za-z][.A-Za-z0-9_]*)?([ \t])*(<-|=)([ \t])*function|setMethod'
         whichLines = grep(pattern, content)
         for(anyLine in whichLines){
@@ -89,7 +89,7 @@ mytags  = function(folder = ".", rec = TRUE, ofile = "tags.txt"){
         cat("\n")
     }
     sink()
-    sink()
+    print("Tags updated successfully.")
 }
 
 strCount = function(x, pattern, split){
@@ -192,3 +192,9 @@ inName = function(df, pattern, noPattern = NULL){
 }
 
 findOut = function(x, n = 2){ which(abs(x - mean(x)) >= n * sd(x)) } 
+
+qp = function(y){
+    library(ggplot2)
+    g = qplot(x = seq_along(y), y = y, geom = "line")
+    print(g)
+}
