@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.40
+# Version     : 0.0.51
 # Created On  : 2016-01-07
-# Modified On : 2016-07-21
+# Modified On : 2016-07-25
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -49,6 +49,22 @@ g      = function(pattern, folder = ".", rec = TRUE){
         }
     }
     if(is.null(whichLines)) print("No match found.")
+}
+
+countProj = function(folder = ".", rec = TRUE){
+    library(R.utils, quietly = TRUE, verbose = FALSE)
+    filesList = dir(folder, patter = ".R$|.r$", recursive = rec)
+    result = list()
+    for(i in 1:length(filesList)){
+        fileName = filesList[[i]]
+        result[[i]] = list(fileName, countLines(fileName))
+        i = i + 1
+    }
+    result = data.frame(do.call("rbind", result))
+    names(result) = c("Name", "Size")
+    result[,2] = as.numeric(result[,2])
+    # result = result[order(-result[,2]), ]
+    return(result)
 }
 
 getLast = function(x){
