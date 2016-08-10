@@ -214,3 +214,11 @@ qp = function(y){
     g = qplot(x = seq_along(y), y = y, geom = "line")
     print(g)
 }
+
+addToList = function(Source, ...){
+    ArgsNames = as.character(as.list(substitute(list(...)))[-1L])
+    for(Name in ArgsNames){
+        Source[[Name]] = get(Name)
+    }
+    return(Source)
+}
