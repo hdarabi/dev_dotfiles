@@ -216,9 +216,10 @@ qp = function(y){
 }
 
 addToList = function(Source, ...){
-    ArgsNames = as.character(as.list(substitute(list(...)))[-1L])
-    for(Name in ArgsNames){
-        Source[[Name]] = get(Name)
+    ArgNames = as.character(as.list(substitute(list(...)))[-1L])
+    ArgValues = list(...)
+    for(i in seq_along(ArgNames)){
+        Source[[ ArgNames[[i]] ]] = ArgValues[[i]]
     }
     return(Source)
 }
