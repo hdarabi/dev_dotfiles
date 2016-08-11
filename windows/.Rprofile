@@ -223,3 +223,22 @@ addToList = function(Source, ...){
     }
     return(Source)
 }
+
+extractList = function(ListToExtract, Env = globalenv()){
+  for(VariableName in names(ListToExtract)){
+    assign(VariableName, ListToExtract[[VariableName]], envir = Env)
+  }
+}
+
+extractObjectSlots = function(Object, Env = globalenv()){
+  for (SlotName in names(getSlots(object@class[[1]]))) {
+    SlotData = slot(Object, SlotName)
+    assign(SlotName, SlotData, envir = Env)
+  }
+}
+
+
+# testFunc = function(Object){
+#   extractObjectSlots(Object, Env = environment())  
+#   str(data)
+# }
