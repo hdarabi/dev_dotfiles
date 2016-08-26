@@ -104,6 +104,6 @@ snippet temp
 	
 snippet sv
 	saveRDS(${1:VariableName}, "`r getwd()`/${1:VariableName}.RData")
-	
+	# ${1:VariableName} = readRDS("`r getwd()`/${1:VariableName}.RData")
 snippet bp
 	stop("DEBUG")
