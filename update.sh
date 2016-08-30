@@ -1,13 +1,13 @@
 ##################################################################
 # Name        : update.sh
 # Description : This script automates copying my settings.
-# Version     : 0.0.1
+# Version     : 0.0.3
 # Created On  : 2016-08-30
 # Modified On : 2016-08-30
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
-cp '/C/Users/hamid.darabi/Documents/.R' './.R' -r
+cp '/c/Users/hamid.darabi/Documents/.R' '.' -r
 
 
 git add * --all
