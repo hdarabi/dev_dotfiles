@@ -1,11 +1,13 @@
 ##################################################################
 # Name        : update.sh
 # Description : This script automates copying my settings.
-# Version     : 0.0.9
+# Version     : 0.0.10
 # Created On  : 2016-08-30
 # Modified On : 2016-09-01
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
+
+git config --global core.autocrlf false
 
 cp '/c/Users/hamid.darabi/Documents/.R' './dot_r' -r
 cp '/c/Users/hamid.darabi/Documents/.Rprofile' './dot_Rprofile.R'
