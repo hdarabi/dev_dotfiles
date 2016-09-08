@@ -90,10 +90,8 @@ snippet ts
 	
 snippet todo
 	`r paste("# TODO ")` ${1:task} `r paste("\n#", Sys.info()[["user"]], "-" , Sys.Date())`
-	
 snippet cm
 	`r paste("#")` ${1:task} `r paste("-", Sys.info()[["user"]], "-" , Sys.Date())`
-
 snippet temp
 	`r paste0(rep("#",80), collapse = "")`
 	`r paste0("# Name        : ")`${1:CurrentFileName}
