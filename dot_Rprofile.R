@@ -63,8 +63,8 @@ countProj = function(folder = ".", rec = TRUE){
     result = data.frame(do.call("rbind", result))
     names(result) = c("Name", "Size")
     result[,2] = as.numeric(result[,2])
-    # result = result[order(-result[,2]), ]
-    return(result)
+    result = result[order(-result[,2]), ]
+    return(as.data.frame(result))
 }
 
 getLast = function(x){
