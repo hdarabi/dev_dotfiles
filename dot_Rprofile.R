@@ -215,3 +215,11 @@ qp = function(y){
     g = qplot(x = seq_along(y), y = y, geom = "line")
     print(g)
 }
+
+to.pdf <- function(expr, filename, ..., verbose = FALSE) {
+    if ( verbose )
+        cat(sprintf("Creating %s\n", filename))
+    pdf(filename, ...)
+    on.exit(dev.off())
+    eval.parent(substitute(expr))
+}

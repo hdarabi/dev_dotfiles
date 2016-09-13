@@ -75,7 +75,6 @@ nnoremap <F7> :set hlsearch!<CR>
 nnoremap <F8> :GundoToggle<CR>
 nnoremap <F9> :ZoomWin<CR>
 nnoremap <C-F> }zt
-nnoremap <C-J> {zt
 inoremap <C-Space> <C-N>
 map <C-E> :NERDTreeToggle<CR>
 map <C-O> :tabnew<CR>
