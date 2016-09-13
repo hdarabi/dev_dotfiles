@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.51
+# Version     : 0.0.52
 # Created On  : 2016-01-07
-# Modified On : 2016-07-25
+# Modified On : 2016-09-13
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
