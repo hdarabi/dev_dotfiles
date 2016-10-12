@@ -1,9 +1,9 @@
 ##################################################################
 # Name        : .Rprofile
 # Description : This is my handy functions list.
-# Version     : 0.0.52
+# Version     : 0.0.53
 # Created On  : 2016-01-07
-# Modified On : 2016-09-13
+# Modified On : 2016-10-12
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
@@ -62,7 +62,8 @@ countProj = function(folder = ".", rec = TRUE){
     }
     result = data.frame(do.call("rbind", result))
     names(result) = c("Name", "Size")
-    result[,2] = as.numeric(result[,2])
+    result[, 1] = as.character(result[, 1])
+    result[, 2] = as.numeric(result[, 2])
     result = result[order(-result[,2]), ]
     return(as.data.frame(result))
 }
@@ -223,3 +224,5 @@ to.pdf <- function(expr, filename, ..., verbose = FALSE) {
     on.exit(dev.off())
     eval.parent(substitute(expr))
 }
+
+# environment(solnp_verbose) <- asNamespace('Rsolnp')
