@@ -226,3 +226,7 @@ to.pdf <- function(expr, filename, ..., verbose = FALSE) {
 }
 
 # environment(solnp_verbose) <- asNamespace('Rsolnp')
+
+`-col` <- function(dataFrame, colName){ 
+    dataFrame[, !names(dataFrame) %in% colName, drop = FALSE]
+}
