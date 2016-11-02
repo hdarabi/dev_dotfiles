@@ -1,0 +1,181 @@
+##################################################################
+# Name        : txt.snippets
+# Description : My latex snippets
+# Version     : 0.0.18
+# Created On  : 2016-03-04
+# Modified On : 2016-03-11
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+
+snippet todo "Creates a TODO comment"
+# TODO: ${0:Desc} - `echo %username% - %DATE%`
+endsnippet
+
+snippet temp "Creates a new template for *.txt files" b
+##################################################################
+# Name        : ${1:file name}
+# Description : ${2:description}
+# Version     : 0.0.0
+# Created On  : ${3:YYYY-MM-DD}
+# Modified On : $3
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+endsnippet
+
+snippet fig "Generates a new figure" b
+\begin{figure}[${1:h}]
+	\centering
+	\includegraphics[width = ${2:1.0}in, height =
+	${3:1.0}in]{${4:fileName-NoExtension}}
+	\caption{${5:caption}}\label{fig:${6:label}}
+\end{figure}
+
+endsnippet
+
+snippet enum "Generates a new numbered list" b
+\begin{enumerate}
+	\item ${1:text}
+	\item ${2:text}
+	\item ${3:text}
+\end{enumerate}
+
+endsnippet
+
+snippet algo "Generates a new algorithm" b
+\begin{center}
+\captionof{algorithm}{${1:algoName}}\label{alg:${2:label}}
+\begin{algorithmic}[${3:algoNumber}]
+	\Require{${4:inputData}}
+	\State ${5:first command}
+\end{algorithmic}
+\hrule
+\end{center}
+
+endsnippet
+
+snippet wh "Generates a new while loop in algorithm"
+\While{${1:condition}}
+	${2:statements}
+\EndWhile
+
+endsnippet
+
+snippet for "Creates a new for loop in algorithms"
+\For{ ${1:indexVariable} \in \{${2:startRange}, \dots, ${3:endRange} \}$ }
+	${4:Statemenets}
+\EndFor
+
+endsnippet
+
+snippet ifel "Create an if else loop in algo"
+\If{ ${1:condittion} }
+	${2:statementTrue}
+\Else
+	${3:statementFalse}
+\EndIf
+
+endsnippet
+
+snippet frac "A fraction"
+\frac{ ${1:numerator} }{ ${2:denomerator} }
+endsnippet
+
+snippet tbl "Creates a table" b
+\begin{table}[${1:h}]
+\centering
+\caption{${2:caption}}\label{tbl:${3:label}}
+\begin{tabular}{${4:columns}}
+	\hline
+	${5:content}
+\hline
+\end{tabular}
+\end{table}
+
+endsnippet
+
+snippet bullet "Generates a bulleted list" b
+\begin{itemize}
+	\item[${1:title}] ${2:content}
+	\item[${3:title}] ${4:content}
+	\item[${5:title}] ${6:content}
+\end{itemize}
+endsnippet
+
+snippet sec "Creates a section" b
+\section{${1:title}}\label{sec:${2:label}}
+${3:content}
+endsnippet
+
+snippet subsec "A subsection" b
+\subsection{${1:title}}\label{subsec:${2:label}}
+${3:content}
+endsnippet
+
+snippet eq "Generate a new equation - avoid" b
+\begin{equation}\label{eq:${1:label}}
+${2:first} \\\\
+${3:second} \\\\
+${4:third}
+\end{equation}
+endsnippet
+
+snippet align "Generates aligned environment" b
+\begin{align}\label{eq:${1:label}}
+	${2:lhs} &= ${3:rhs}\\\\
+	${4:lhs} &= ${5:rhs}\\\\
+	${6:lhs} &= ${7:rhs}
+\end{align}
+endsnippet
+
+snippet gather "gather environment" b
+\begin{gather}\label{eq:${1:label}}
+	${2:line} \\\\
+	${3:line} \\\\
+	${4:line}
+\end{gather}
+endsnippet
+
+snippet paper "A new paper template" b
+\documentclass[12pt]{article}
+\input{my.lat}
+\begin{document}
+\title{${1:Paper Title}}
+\author{Hamid R. Darabi${2:, others}}
+\affil{${3:affiliation}}
+\maketitle
+
+\begin{abstract}
+${4:This is a placeholder for abstract.}
+\end{abstract}
+
+${5:start the section command here}
+
+\end{document}
+endsnippet
+
+snippet prop "Generates a new proposition" b
+\begin{proposition}[${1:number}]\label{prop:${2:label}}
+${3:content}
+\end{proposition}
+endsnippet
+
+snippet theo "Generates a new theorem" b
+\begin{theorem}[${1:number}]\label{theo:${2:label}}
+	${3:content}
+\end{thorem}
+
+endsnippet
+
+snippet lemma "Generates a new lemma" b
+\begin{lemma}[${1:number}]\label{lemma:${2:label}}
+	${3:content}
+\end{lemma}
+
+endsnippet
+
+snippet proof "Generates a proof" b
+\begin{proof}
+	${1:content}
+\end{proof}
+
+endsnippet

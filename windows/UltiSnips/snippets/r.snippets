@@ -1,0 +1,189 @@
+##################################################################
+# Name        : r.snippets
+# Description : My [R] programming snippets
+# Version     : 0.0.26
+# Created On  : 2016-02-29
+# Modified On : 2016-03-09
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+
+snippet todo "Creates a TODO comment"
+# TODO: ${0:Desc} - `echo %username% - %DATE%`
+endsnippet
+
+snippet #! "Hashbang for Rscript (#!)" b
+#!/usr/bin/env Rscript
+endsnippet
+
+snippet setwd "Sets the active directory to current path" b
+setwd("`!p snip.rv = os.getcwd().replace('\\', '/')`")
+endsnippet
+
+snippet so "Adds a new source to the [R] script" b
+source(paste0(${1:path}, "${2:file name}"))
+endsnippet
+
+snippet temp "Creates a new template for *.R files" b
+##################################################################
+# Name        : ${1:file name}
+# Description : ${2:description}
+# Version     : 0.0.0
+# Created On  : ${3:YYYY-MM-DD}
+# Modified On : $3
+# Author      : Hamid R. Darabi, Ph.D.
+##################################################################
+endsnippet
+
+snippet as "Apply type on variable" w
+as.$1`!p snip.rv = complete(t[1], FIELD_TYPES)`(${2}${VISUAL})
+endsnippet
+
+snippet is "Test type on variable" w
+is.$1`!p snip.rv = complete(t[1], FIELD_TYPES)`(${2}${VISUAL})
+endsnippet
+
+snippet dl "Download and install a package" b
+download.file("${1:${VISUAL:url to package}}", destfile = "${2:${1/.*\/(\S*)$/(?1:$1)/ga}}")
+install.packages("$2", type = "source", repos = NULL)
+library("${3:${2/^(\w+)_.*$/(?1:$1)/ga}}")
+endsnippet
+
+snippet lib "Import a library"
+library(${0:package})
+endsnippet
+
+snippet req "Require a file"
+require(${0:package})
+endsnippet
+
+snippet source "Source a file"
+source('${0:file}')
+endsnippet
+
+snippet if "If statement"
+if(${1}) { 
+	${0}
+} 
+endsnippet
+
+snippet eif "Else-If statement"
+else if(${1}) {
+	${0}
+} 
+endsnippet
+
+snippet el "Else statement"
+else {
+	${0}
+} 
+endsnippet
+
+snippet ife "if .. else"
+if(${1}) {
+	${2}
+} else {
+	${3}
+} 
+endsnippet
+
+snippet wh "while loop"
+while(${1}) {
+	${2}
+} 
+endsnippet
+
+snippet for "for loop"
+for(${1:item} in ${2:list}) {
+	${3}
+} 
+endsnippet
+
+snippet fun "Function definition"
+${1:name} = function(${2}) {
+	${0}
+} 
+endsnippet
+
+snippet ret "Return call"
+return(${0})
+endsnippet
+
+snippet df "Data frame"
+${1:name}[${2:rows}, ${0:cols}]
+endsnippet
+
+snippet c "c function"
+c(${0:items})
+endsnippet
+
+snippet li "list function"
+list(${0:items})
+endsnippet
+
+snippet mat "matrix function"
+matrix(${1:data}, nrow = ${2:rows}, ncol = ${0:cols})
+endsnippet
+
+snippet apply "apply function"
+apply(${1:array}, ${2:margin}, ${0:function})
+endsnippet
+
+snippet lapply "lapply function"
+lapply(${1:list}, ${0:function})
+endsnippet
+
+snippet sapply "sapply function"
+sapply(${1:list}, ${0:function})
+endsnippet
+
+snippet vapply "vapply function"
+vapply(${1:list}, ${2:function}, ${0:type})
+endsnippet
+
+snippet mapply "mapply function"
+mapply(${1:function}, ${0:...})
+endsnippet
+
+snippet tapply "tapply function"
+tapply(${1:vector}, ${2:index}, ${0:function})
+endsnippet
+
+snippet rapply "rapply function"
+rapply(${1:list}, ${0:function})
+endsnippet
+
+snippet pl "Plot function"
+plot(${1:x}, ${0:y})
+endsnippet
+
+snippet ggp "ggplot2 plot"
+ggplot(data = ${1:data}, aes(x = ${2:x}, y = ${3:y})) + geom_${0:line}()
+endsnippet
+
+snippet fis "Fisher test"
+fisher.test(${1:x}, ${0:y})
+endsnippet
+
+snippet chi "Chi Squared test"
+chisq.test(${1:x}, ${0:y})
+endsnippet
+
+snippet tt "t-test"
+t.test(${1:x}, ${0:y})
+endsnippet
+
+snippet wil "Wilcox test"
+wilcox.test(${1:x}, ${0:y})
+endsnippet
+
+snippet cor "Correlation test"
+cor.test(${1:x}, ${0:y})
+endsnippet
+
+snippet fte "FTE test"
+var.test(${1:x}, ${0:y})
+endsnippet
+
+snippet kvt "KV test"
+kv.test(${1:x}, ${0:y})
+endsnippet
