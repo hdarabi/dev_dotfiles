@@ -24,7 +24,7 @@ if( as.POSIXlt(Sys.time())$hour < 12 ){
 }
 
 # print( paste( df[rnd,"quote"]) )
-print( paste("Hi Hamid!", timeStr ) )
+# print( paste("Hi Hamid!", timeStr ) )
 rm(list = ls())
 na0    = function(x){ x[is.na(x)] = 0; x }
 sna    = function(x){ sum(is.na(x)) }
@@ -217,7 +217,7 @@ qp = function(y){
     print(g)
 }
 
-to.pdf <- function(expr, filename, ..., verbose = FALSE) {
+to.pdf = function(expr, filename, ..., verbose = FALSE) {
     if ( verbose )
         cat(sprintf("Creating %s\n", filename))
     pdf(filename, ...)
@@ -226,3 +226,5 @@ to.pdf <- function(expr, filename, ..., verbose = FALSE) {
 }
 
 # environment(solnp_verbose) <- asNamespace('Rsolnp')
+
+sci = function(x){ format(x, scientific = TRUE)}

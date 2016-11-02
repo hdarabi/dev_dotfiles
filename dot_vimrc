@@ -33,6 +33,7 @@ Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'EasyMotion'
 Plugin 'Yggdroot/indentLine'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 let g:unite_source_history_yank_enable = 1

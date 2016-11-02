@@ -16,8 +16,8 @@ TwoTSCompare = function(data, DateVariable, First, Second){
   
   p1 = ggplot(aes(x = Date, y = First), data = LocalSubset) + geom_line(color = "blue") + 
     ylim(0, max(LocalSubset$First)) + ggtitle(First) + theme_bw()
-  p2 = ggplot(aes(x = x, y = Second), data = LocalSubset) + geom_line(colour = "black") +
-    theme(panel.background = element_rect(fill = NA))
+  p2 = ggplot(aes(x = Date, y = Second), data = LocalSubset) + geom_line(colour = "red") +
+    theme(panel.background = element_rect(fill = NA)) 
   
   g1 <- ggplot_gtable(ggplot_build(p1))
   g2 <- ggplot_gtable(ggplot_build(p2))
