@@ -228,3 +228,20 @@ to.pdf = function(expr, filename, ..., verbose = FALSE) {
 # environment(solnp_verbose) <- asNamespace('Rsolnp')
 
 sci = function(x){ format(x, scientific = TRUE)}
+
+
+getExercises = function(TotalNumber, ToSolvesPerSession, Sessions = 4){
+    ExerciseNumbers = list()
+    TheOnesToSolve = sample(1:TotalNumber, ToSolvesPerSession * Sessions)
+    Remaining = TheOnesToSolve
+    for(i in 1:(Sessions - 1)){
+        ExerciseNumbers[[i]] = sample(Remaining, ToSolvesPerSession) 
+        Remaining = Remaining[ !Remaining %in% ExerciseNumbers[[i]] ]
+    }
+    if(length(Remaining) <= ToSolvesPerSession){
+        ExerciseNumbers[[Sessions]] = Remaining    
+    }else{
+        ExerciseNumbers[[Sessions]] = sample(Reaming, ToSolvesPerSession)
+    }
+    return(ExerciseNumbers)
+}
