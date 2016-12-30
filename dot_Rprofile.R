@@ -244,3 +244,7 @@ getExercises = function(TotalNumber, ToSolvesPerSession, Sessions = 4){
     }
     return(lapply(ExerciseNumbers, sort))
 }
+
+PEToROI = function(PE){
+    exp(log(2) / PE)
+}
