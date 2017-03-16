@@ -97,3 +97,36 @@ createEmptyDataFrame = function(columnNames, numberOfRows = 0, stringsAsFactors 
   names( emptyDataFrame ) = columnNames
   emptyDataFrame
 }
+
+function findLatitudeLogitude(GeographyString){
+    library(RSelenium)
+    startServer()
+    remDr <- remoteDriver(remoteServerAddr = "localhost",
+                          port = 4444,
+                          browserName = "chrome")
+    remDr$open()
+    remDr$getStatus()
+    result = list()
+    remDr$navigate("http://www.latlong.net/")
+    Sys.sleep(10)    
+    result = list()
+    for(i in 1:length(GeographyString)){
+        lat = NA
+        lng = NA
+        Geo = GeographyString[i]
+        webElem <- remDr$findElement(using = "id", "gadres")
+        webElem$clearElement()
+        webElem$sendKeysToElement(list(paste(Geo), key = "enter"))
+        Sys.sleep(5)
+        webElem2 <- remDr$findElement(using = "id", "lat")
+        lat = webElem2$getElementAttribute("value")[[1]]
+        webElem2 <- remDr$findElement(using = "id", "lng")
+        lng = webElem2$getElementAttribute("value")[[1]]
+        result[[i]] = list(lat = lat, lng = lng)    
+    }
+    df = data.frame(do.call(rbind, result))
+    df$lat = unlist(df$lat)
+    df$lng = unlist(df$lng)
+    df$Geography = TotalSearch$GeographyString
+    return(df)
+}
