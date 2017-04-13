@@ -1,5 +1,4 @@
 \usepackage{listings}
-\usepackage{xcolor}
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amsfonts}

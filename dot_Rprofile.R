@@ -244,3 +244,12 @@ getExercises = function(TotalNumber, ToSolvesPerSession, Sessions = 4){
     }
     return(lapply(ExerciseNumbers, sort))
 }
+
+getPassword <- function(file = "oracle_nz_pwd") {
+    require(ChorsStandard)
+    require(PKI)
+    load(paste0(get.user.path('home'),"KeyP"))
+    load(paste0(get.user.path('home'),file))
+    PKI.load.key(priv.pem)->key
+    rawToChar(PKI.decrypt(e,key))
+}
