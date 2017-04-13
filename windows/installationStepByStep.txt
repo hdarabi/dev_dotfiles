@@ -49,3 +49,6 @@ Copy .Rprofile to c:\users\user.name\documents
 *******************************
 Copy UltiSnip folder from dev_dofiles to the .vim folder under vim-snippets
 in the same folder name
+*******************************
+If you have a problem with rJava go to the link below. Look at PATH and JAVA_HOME
+http://stackoverflow.com/questions/7019912/using-the-rjava-package-on-win7-64-bit-with-r
