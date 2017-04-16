@@ -1,0 +1,25 @@
+configurations.txt
+
+:Author: Hamid R. Darabi, Ph.D.
+:Email: hamid.darabi
+:Date: 2017-04-16 18:58
+
+After installing git and gvim, do the following
+##########################################################
+The following works on both Windows, Linux and Mac for me.
+
+set nocompatible
+set rtp+=$HOME/.vim/bundle/vundle
+let path='$HOME/.vim/bundle'
+call vundle#rc('$HOME/.vim/bundle')
+This assumes that:
+
+You have a .vim directory at C:\Users\user-name\.vim
+You have .vimrc inside C:\Users\user-name\.vimrc
+Create a directory called bundle at C:\Users\user-name\.vim\bundle
+Navigate to C:\Users\user-name\.vim\bundle on command prompt, and run:
+git clone https://github.com/gmarik/Vundle.vim.git vundle
+
+Now run vim from command-line and run :BundleInstall
+##########################################################
+
