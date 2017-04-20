@@ -1,40 +1,53 @@
 ##################################################################
 # Name        : python.snippets
 # Description : My python programming snippets
-# Version     : 0.0.0
+# Version     : 0.0.21
 # Created On  : 2017-01-13
-# Modified On : 2017-01-13
+# Modified On : 2017-04-19
 # Author      : Hamid R. Darabi, Ph.D.
 ##################################################################
 
 snippet todo "Creates a TODO comment"
-# TODO: ${0:Desc} - `echo %username% - %DATE%`
-endsnippet
+	# TODO: ${0:Desc} - `echo %username% - %DATE%`
 
 snippet temp "Creates a new template for *.py files" b
-##################################################################
-# Name        : ${1:file name}
-# Description : ${2:description}
-# Version     : 0.0.0
-# Created On  : ${3:YYYY-MM-DD}
-# Modified On : $3
-# Author      : Hamid R. Darabi, Ph.D.
-##################################################################
-endsnippet
+	##################################################################
+	# Name        : ${1:file name}
+	# Description : ${2:description}
+	# Version     : 0.0.0
+	# Created On  : ${3:YYYY-MM-DD}
+	# Modified On : $3
+	# Author      : Hamid R. Darabi, Ph.D.
+	##################################################################
 
 snippet #!
 	#!/usr/bin/env python
 	# -*- coding: utf-8 -*-
+
 snippet #!3
 	#!/usr/bin/env python3
 	# -*- coding: utf-8 -*-
+
 snippet imp
-	import ${0:module}
+	import ${1:package} as ${2:module}
+	${0}
+
+snippet np
+	import numpy as np
+
+snippet sci
+	import scipy as sci
+
+snippet pd
+	import panda as pd
+
 snippet uni
 	def __unicode__(self):
 		${0:representation}
+
 snippet from
-	from ${1:package} import ${0:module}
+	from ${0:package} import ${1:module}
+
 # Module Docstring
 snippet docs
 	"""
@@ -48,15 +61,18 @@ snippet docs
 snippet wh
 	while ${1:condition}:
 		${0}
+
 # dowh - does the same as do...while in other languages
 snippet dowh
 	while True:
 		${1}
 		if ${0:condition}:
 			break
+
 snippet with
 	with ${1:expr} as ${2:var}:
 		${0}
+
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
@@ -65,18 +81,22 @@ snippet cl
 			${5:super($1, self).__init__()}
 			self.$4 = $4
 			${0}
+
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
 		${0}
+
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		${0}
+
 # New Method
 snippet defm
 	def ${1:mname}(self, ${2:arg}):
 		${0}
+
 # New Property
 snippet property
 	def ${1:foo}():
@@ -89,6 +109,7 @@ snippet property
 			${0:del self._$1}
 		return locals()
 	$1 = property(**$1())
+
 # Ifs
 snippet if
 	if ${1:condition}:
@@ -103,23 +124,30 @@ snippet ei
 snippet for
 	for ${1:item} in ${2:items}:
 		${0}
+
 # Encodes
 snippet cutf8
 	# -*- coding: utf-8 -*-
+
 snippet clatin1
 	# -*- coding: latin-1 -*-
+
 snippet cascii
 	# -*- coding: ascii -*-
+
 # Lambda
 snippet ld
 	${1:var} = lambda ${2:vars} : ${0:action}
+
 snippet .
 	self.
+
 snippet try Try/Except
 	try:
 		${1}
 	except ${2:Exception}, ${3:e}:
 		${0:raise $3}
+
 snippet try Try/Except/Else
 	try:
 		${1}
@@ -127,6 +155,7 @@ snippet try Try/Except/Else
 		${4:raise $3}
 	else:
 		${0}
+
 snippet try Try/Except/Finally
 	try:
 		${1}
@@ -134,6 +163,7 @@ snippet try Try/Except/Finally
 		${4:raise $3}
 	finally:
 		${0}
+
 snippet try Try/Except/Else/Finally
 	try:
 		${1}
@@ -143,45 +173,56 @@ snippet try Try/Except/Else/Finally
 		${5}
 	finally:
 		${0}
+
 # if __name__ == '__main__':
 snippet ifmain
 	if __name__ == '__main__':
 		${0:main()}
+
 # __magic__
 snippet _
 	__${1:init}__
+
 # python debugger (pdb)
 snippet pdb
 	import pdb
 	pdb.set_trace()
+
 # bpython debugger (bpdb)
 snippet bpdb
 	import bpdb
 	bpdb.set_trace()
+
 # ipython debugger (ipdb)
 snippet ipdb
 	import ipdb
 	ipdb.set_trace()
+
 # embed ipython itself
 snippet iem
 	import IPython
 	IPython.embed()
+
 # ipython debugger (pdbbb)
 snippet pdbbb
 	import pdbpp
 	pdbpp.set_trace()
+
 # remote python debugger (rpdb)
 snippet rpdb
 	import rpdb
 	rpdb.set_trace()
+
 # ptpython
 snippet ptpython
 	from ptpython.repl import embed
 	embed(globals(), locals(), vi_mode=${1:False}, history_filename=${2:None})
+
 # python console debugger (pudb)
 snippet pudb
 	import pudb
 	pudb.set_trace()
+
 # pdb in nosetests
 snippet nosetrace
 	from nose.tools import set_trace
@@ -192,13 +233,16 @@ snippet pprint
 snippet "
 	"""${0:doc}
 	"""
+
 # assertions
 snippet a=
 	self.assertEqual(${0}, ${1})
+
 # test function/method
 snippet test
 	def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
 		${0}
+
 # test case
 snippet testcase
 	class ${1:ExampleCase}(unittest.TestCase):
@@ -207,6 +251,7 @@ snippet testcase
 			${0}
 snippet fut
 	from __future__ import ${0}
+
 #getopt
 snippet getopt
 	try:
@@ -224,22 +269,29 @@ snippet getopt
 			${0}
 		elif option in ("-v", "--verbose"):
 			verbose = argument
+
 # logging
 # glog = get log
 snippet glog
 	import logging
 	logger = logging.getLogger(${0:__name__})
+
 snippet le
 	logger.error(${0:msg})
+
 # conflict with lambda=ld, therefor we change into Logger.debuG
 snippet lg
 	logger.debug(${0:msg})
+
 snippet lw
 	logger.warning(${0:msg})
+
 snippet lc
 	logger.critical(${0:msg})
+
 snippet li
 	logger.info(${0:msg})
+
 snippet epydoc
 	"""${1:Description}
 
@@ -251,16 +303,22 @@ snippet epydoc
 
 	@raise e: ${0: Description}
 	"""
+
 snippet dol
 	def ${1:__init__}(self, *args, **kwargs):
 	    super(${0:ClassName}, self).$1(*args, **kwargs)
+
 snippet kwg
 	self.${1:var_name} = kwargs.get('$1', ${2:None})
+
 snippet lkwg
 	${1:var_name} = kwargs.get('$1', ${2:None})
+
 snippet args
 	*args${1:,}${0}
+
 snippet kwargs
 	**kwargs${1:,}${0}
+
 snippet akw
 	*args, **kwargs${1:,}${0}

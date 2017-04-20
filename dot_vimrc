@@ -8,11 +8,12 @@ set expandtab
 set spell spelllang=en_us
 set diffexpr=MyDiff()
 set tags=./tags.txt;,tags.txt;
+let $PYTHONPATH = "C:\\Users\\R3PUX\\Anaconda3"
 colorscheme koehler
 filetype off
-set rtp +=~/vimfiles/bundle/Vundle.vim
-let $PYTHONPATH = "C:\\Python27\\Lib;C:\\Python27\\DLLs;C:\\Python27\\Lib\\lib-tk"
-let vimrplugin_r_path = 'C:\R\bin\x64\'
+set rtp+=$HOME/.vim/bundle/vundle
+let path='$HOME/.vim/bundle'
+call vundle#rc('$HOME/.vim/bundle')
 call vundle#begin()
 Plugin 'xuhdev/SingleCompile.git'
 Plugin 'gmarik/Vundle.vim'
