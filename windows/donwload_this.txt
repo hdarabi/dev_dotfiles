@@ -13,6 +13,7 @@ PrimoPDF:      PDF Maker
 PDFill:        PDF Editor
 Launchy:       Windows program launcher
 PhreseExpress: Phrase editor
+windirstat: gets the size of each directory and files in it
 
 # Install choco by using the following command at administrative shell
 
